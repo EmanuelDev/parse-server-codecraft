@@ -9,8 +9,10 @@ Parse.Cloud.define("getWeatherCluj", function (request, response) {
 
         console.log(response, "//////////////////////////////////////////////////////////////////////////////////////////////////////////////")
 
-        response.success(weatherClujResponse);
+
 
     });
+
+    response.success(weatherClujResponse);
 
 });
