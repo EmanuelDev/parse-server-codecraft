@@ -67,7 +67,7 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function (req, res) {
-	res.status(200).send('Bla bla bla!');
+	res.status(200).sendFile(path.join(__dirname, '/public/index.html'));
 	console.log(res.status)
 });
 
