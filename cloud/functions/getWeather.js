@@ -22,7 +22,3 @@ Parse.Cloud.define("getWeather", function(request, response) {
 // 		console.log(body);
 // 	}
 // });
-
-Parse.Cloud.define('hello', function(req, res) {
-    res.success('Hello world!');
-});
