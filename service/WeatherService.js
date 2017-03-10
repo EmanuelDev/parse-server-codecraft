@@ -1,46 +1,16 @@
 'use strict';
 
+var Client = require('node-rest-client').Client;
+
 module.exports.getCluj = function () {
-    return '{\
-   "coord": {\
-     "lon": 23.6,\
-     "lat": 46.77\
-   },\
-   "weather": [\
-     {\
-       "id": 701,\
-       "main": "Mist",\
-       "description": "mist",\
-       "icon": "50d"\
-     }\
-   ],\
-   "base": "stations",\
-   "main": {\
-     "temp": 283.5,\
-     "pressure": 1009,\
-     "humidity": 53,\
-     "temp_min": 283.15,\
-     "temp_max": 284.15\
-   },\
-   "visibility": 10000,\
-   "wind": {\
-     "speed": 1.5,\
-     "deg": 340\
-   },\
-   "clouds": {\
-     "all": 75\
-   },\
-   "dt": 1489156200,\
-   "sys": {\
-     "type": 1,\
-     "id": 5988,\
-     "message": 0.1427,\
-     "country": "RO",\
-     "sunrise": 1489121218,\
-     "sunset": 1489163107\
-   },\
-   "id": 681290,\
-   "name": "Cluj-Napoca",\
-   "cod": 200\
- }'
+    var client = new Client();
+
+    client.registerMethod("getWeatherCluj", "http://api.openweathermap.org/data/2.5/weather?q=Cluj-Napoca,ro&APPID=65dd2ac498f766ee2c834bdea819356a", "GET");
+
+    return client.methods.getWeatherCluj(function (data, response) {
+        // parsed response body as js object
+        console.log(data);
+        // raw response
+        console.log(response);
+    });
 };
