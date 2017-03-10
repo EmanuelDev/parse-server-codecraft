@@ -1,4 +1,4 @@
-var request = require('request');
+
 Parse.Cloud.define("getWeather", function(request, response) {
 	// Set up to modify user data
 	Parse.Cloud.useMasterKey();
