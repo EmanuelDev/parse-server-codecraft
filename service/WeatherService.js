@@ -10,7 +10,9 @@ module.exports.getCluj = function () {
 
     client.methods.getWeatherCluj(function (data, response) {
 
-        result.resolve(response);
+        console.log(data, "data");
+        // raw response
+        console.log(response, "response");
 
     });
 };
