@@ -3,9 +3,14 @@
 var weatherService = require('../service/WeatherService.js');
 
 Parse.Cloud.define("getWeatherCluj", function (request, response) {
+    var weatherClujResponse = undefined;
+    weatherService.getCluj().then(function(response) {
+        weatherClujResponse = response;
 
-    var weatherClujResponse = weatherService.getCluj();
+        console.log(response, "//////////////////////////////////////////////////////////////////////////////////////////////////////////////")
 
-    response.success(weatherClujResponse);
+        response.success(weatherClujResponse);
+
+    });
 
 });
