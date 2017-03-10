@@ -1,7 +1,7 @@
 var https = require('https');
 var apiKey = "65dd2ac498f766ee2c834bdea819356a";
 var queryString = "q=Cluj-Napoca,ro&APPID=";
-var apiHost = "api.openweathermap.org/data/2.5/weather";
+var apiHost = "api.openweathermap.org/data/2.5/weather/";
 
 function performRequest (endpoint, method, data, success) {
     var dataString = JSON.stringify(data);
