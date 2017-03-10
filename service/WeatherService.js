@@ -8,11 +8,9 @@ module.exports.getCluj = function () {
 
     var result = new Parse.Promise();
 
-    client.methods.getWeatherCluj(function (data, response) {
+    client.methods.getWeatherCluj(function (status, response) {
 
-        console.log(data, "data /////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
-        // raw response
-        console.log(response, "response ===============================================================================================================");
+        return response;
 
     });
 };
