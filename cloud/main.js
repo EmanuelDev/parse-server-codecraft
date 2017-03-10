@@ -3,5 +3,3 @@ require("./functions/hello");
 
 // require("./triggers/testObject");
 // require("./triggers/player");
-
-
