@@ -5,7 +5,7 @@ var https = require('https');
 var cron = require('node-cron');
 var weatherService = require('../service/WeatherService.js');
 
-var task = cron.schedule('* * * * *', function() {
+var task = cron.schedule('*/30 * * * *', function() {
     weatherService.getClujWeather().then(function(data) {
 
         response.success(data);
