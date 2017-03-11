@@ -5,7 +5,7 @@ var https = require('https');
 var cron = require('node-cron');
 var weatherService = require('../service/WeatherService.js');
 
-var task = cron.schedule('*/10 * * * *', function() {
+var task = cron.schedule('* * * * *', function() {
     cosnole.log("cevaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 
 });
