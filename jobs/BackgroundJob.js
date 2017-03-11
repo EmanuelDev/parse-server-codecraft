@@ -6,8 +6,11 @@ var cron = require('node-cron');
 var weatherService = require('../service/WeatherService.js');
 
 var task = cron.schedule('* * * * *', function() {
-    console.log("cevaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    weatherService.getClujWeather().then(function(data) {
 
+        response.success(data);
+
+    });
 });
 
 task.start();

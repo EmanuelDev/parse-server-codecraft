@@ -2,13 +2,14 @@
 
 var Client = require('node-rest-client').Client;
 
+var WeatherCluj = Parse.Object.extend('WeatherCluj');
+var weatherCluj = new WeatherCluj();
+
 module.exports.getClujWeather = function () {
     var client = new Client();
     client.registerMethod("getWeather", "http://api.openweathermap.org/data/2.5/weather?q=Cluj-Napoca,ro&APPID=65dd2ac498f766ee2c834bdea819356a", "GET");
 
     var result = new Parse.Promise();
-    var WeatherCluj = Parse.Object.extend('WeatherCluj');
-    var weatherCluj = new WeatherCluj();
 
     client.methods.getWeather(function (response) {
         weatherCluj.set("cityName", response.name);
