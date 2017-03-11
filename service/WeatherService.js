@@ -13,7 +13,7 @@ module.exports.getClujWeather = function () {
     client.methods.getWeather(function (response) {
         weatherCluj.set("cityName", response.name);
         weatherCluj.set("country", response.sys.country);
-        weatherCluj.set("description", response.weather["description"].description);
+        // weatherCluj.set("description", response.weather["description"].description);
         weatherCluj.set("windSpeed", response.wind.speed);
         result.resolve(response);
     }, function (err) {
