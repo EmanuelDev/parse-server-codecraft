@@ -20,6 +20,7 @@ module.exports.getClujWeather = function () {
         result.reject(error);
     });
 
+    console.log("bla")
     return result;
 
 };
