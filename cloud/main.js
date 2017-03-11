@@ -1,7 +1,4 @@
 'use strict';
 
-// require('../route/WeatherRoutes.js');
-//
-// Parse.Cloud.define('getWeather', function(req, res) {
-//
-// });
+require('../route/WeatherRoutes.js');
+require('../jobs/BackgroundJob.js');
