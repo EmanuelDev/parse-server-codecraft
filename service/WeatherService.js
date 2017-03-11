@@ -15,7 +15,7 @@ module.exports.getClujWeather = function () {
         weatherCluj.set("country", response.sys.country);
         // weatherCluj.set("description", response.weather["description"].description);
         weatherCluj.set("windSpeed", response.wind.speed);
-        weatherCluj.set("description", response.weather[1].description);
+        weatherCluj.set("description", response.weather[0].description);
         weatherCluj.save();
         result.resolve(response);
         console.log()
