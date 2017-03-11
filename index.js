@@ -1,6 +1,20 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var ParseDashboard = require('parse-dashboard');
+
+var allowInsecureHTTP = false
+
+var dashboard = new ParseDashboard({
+	"apps": [
+		{
+			"serverURL": "http://localhost:1337/parse",
+			"appId": "myAppID",
+			"masterKey": "myMasterKey",
+			"appName": "parseTest"
+		}
+	]
+}, allowInsecureHTTP);
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -24,6 +38,9 @@ var api = new ParseServer({
 });
 
 var app = express();
+
+// make the Parse Dashboard available at /dashboard
+app.use('/dashboard', dashboard);
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
