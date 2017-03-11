@@ -9,6 +9,7 @@ module.exports.getClujWeather = function () {
     var result = new Parse.Promise();
 
     client.methods.getWeather(function (response) {
+        console.log(response, "//////////////////////////////////////////////////////////////////////////////////////////////////////////////");
         result.resolve(response);
     }, function (err) {
         result.reject(error);
