@@ -1,5 +1,4 @@
 var express = require('express');
-var ParseDashboard = require('parse-dashboard');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
 
@@ -24,25 +23,10 @@ var api = new ParseServer({
 
 });
 
-var dashboard = new ParseDashboard({
-	"apps": [
-		{
-			"serverURL": "http://localhost:1337/parse",
-			"appId": "myAppID",
-			"masterKey": "myMasterKey",
-			"appName": "parse-server-ema-test"
-		}
-	]
-});
-
-
 var app = express();
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
-
-//make the Parse Dashboard available at /dashboard
-app.use('/dashboard', dashboard);
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
